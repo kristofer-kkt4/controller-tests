@@ -1,10 +1,10 @@
-package hi.hotelsearch.model;
+package com.example.service;
 
 import java.util.ArrayList;
-import hi.hotelsearch.model.Room;
+
 import hi.hotelsearch.db.RoomDB;
 import hi.hotelsearch.controller.RoomController;
-import java.util.ArrayList;
+
 import java.time.LocalDate;
 
 public class Hotel {
@@ -20,7 +20,7 @@ public class Hotel {
         this.name = name;
 		this.country = country;
         this.city = city;
-        this.rooms = null;
+        this.rooms = new ArrayList<>();
     }
 
 	public void getRoomsByAvailability(LocalDate from, LocalDate to) throws Exception {
@@ -48,10 +48,6 @@ public class Hotel {
 
     public int getId() {
         return id;
-    }
-
-    public String getCity() {
-        return city;
     }
 
     public ArrayList<Room> getRooms() {

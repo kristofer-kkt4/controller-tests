@@ -1,4 +1,4 @@
-package hi.hotelsearch.model;
+package com.example.service;
 import java.time.LocalDate;
 import hi.hotelsearch.controller.BookingController;
 public class Room {
