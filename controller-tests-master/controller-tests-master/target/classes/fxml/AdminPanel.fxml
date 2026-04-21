@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.ui.controllers.AdminPanelController"
+            styleClass="root-pane">
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="0">
+            <Label text="✈  TripPlanner" styleClass="nav-brand"/>
+            <Label text="— ADMIN PANEL" styleClass="admin-badge"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Monitor Services" onAction="#handleMonitorServices" styleClass="btn-nav"/>
+            <Button text="Logout"           onAction="#handleLogout"          styleClass="btn-nav-outline"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="28" styleClass="dashboard-content">
+
+                <!-- Stats -->
+                <HBox spacing="16">
+                    <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" spacing="8">
+                        <Label text="TOTAL USERS"    styleClass="stat-label"/>
+                        <Label fx:id="totalUsersLabel"    styleClass="stat-value"/>
+                    </VBox>
+                    <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" spacing="8">
+                        <Label text="TOTAL PACKAGES" styleClass="stat-label"/>
+                        <Label fx:id="totalPackagesLabel" styleClass="stat-value"/>
+                    </VBox>
+                    <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" spacing="8">
+                        <Label text="SAVED PLANS"    styleClass="stat-label"/>
+                        <Label fx:id="totalPlansLabel"    styleClass="stat-value"/>
+                    </VBox>
+                    <VBox styleClass="stat-card-green" HBox.hgrow="ALWAYS" spacing="8">
+                        <Label text="SERVICES"       styleClass="stat-label"/>
+                        <Label fx:id="servicesStatusLabel" styleClass="stat-value-green"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Manage Users -->
+                <VBox styleClass="search-card" spacing="16">
+                    <Label text="Manage Users" styleClass="section-title"/>
+                    <HBox styleClass="admin-row-header" spacing="16">
+                        <Label text="ID"     styleClass="admin-col-head" minWidth="90"/>
+                        <Label text="Name"   styleClass="admin-col-head" HBox.hgrow="ALWAYS"/>
+                        <Label text="Email"  styleClass="admin-col-head" HBox.hgrow="ALWAYS"/>
+                        <Label text="Role"   styleClass="admin-col-head" minWidth="80"/>
+                        <Label text="Action" styleClass="admin-col-head" minWidth="80"/>
+                    </HBox>
+                    <VBox fx:id="usersContainer" spacing="8"/>
+                </VBox>
+
+                <!-- Manage Packages -->
+                <VBox styleClass="search-card" spacing="16">
+                    <Label text="Manage Trip Packages" styleClass="section-title"/>
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <TextField fx:id="newPackageTitleField" promptText="Package title"
+                                   styleClass="text-field" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="newPackagePriceField" promptText="Price (e.g. 1250)"
+                                   styleClass="text-field" prefWidth="160"/>
+                        <Button text="＋  Add Package" onAction="#handleAddPackage" styleClass="btn-primary"/>
+                    </HBox>
+                    <Label fx:id="pkgStatusLabel" text="" styleClass="success-label"/>
+                    <Separator/>
+                    <HBox styleClass="admin-row-header" spacing="16">
+                        <Label text="ID"          styleClass="admin-col-head" minWidth="90"/>
+                        <Label text="Title"       styleClass="admin-col-head" HBox.hgrow="ALWAYS"/>
+                        <Label text="Price"       styleClass="admin-col-head" minWidth="100"/>
+                        <Label text="Action"      styleClass="admin-col-head" minWidth="80"/>
+                    </HBox>
+                    <VBox fx:id="packagesContainer" spacing="8"/>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

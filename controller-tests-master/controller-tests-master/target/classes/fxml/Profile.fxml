@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.ui.controllers.ProfileController"
+            styleClass="root-pane">
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="0">
+            <Label text="✈  TripPlanner" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Search Trips" onAction="#goToDashboard" styleClass="btn-nav"/>
+            <Button text="My Plans"     onAction="#goToMyPlans"   styleClass="btn-nav"/>
+            <Button text="Logout"       onAction="#handleLogout"  styleClass="btn-nav-outline"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="28" styleClass="dashboard-content">
+                <HBox spacing="20" alignment="CENTER_LEFT" styleClass="profile-header-box">
+                    <Label text="👤" styleClass="avatar-icon"/>
+                    <VBox spacing="4">
+                        <Label fx:id="profileNameLabel" styleClass="profile-name"/>
+                        <Label text="Traveler Account" styleClass="muted-label"/>
+                    </VBox>
+                </HBox>
+                <VBox styleClass="search-card" spacing="18">
+                    <Label text="Edit Profile" styleClass="section-title"/>
+                    <GridPane hgap="24" vgap="14">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <VBox spacing="6" GridPane.columnIndex="0">
+                            <Label text="FULL NAME" styleClass="field-label"/>
+                            <TextField fx:id="nameField" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="1">
+                            <Label text="EMAIL" styleClass="field-label"/>
+                            <TextField fx:id="emailField" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <Label text="NEW PASSWORD  (leave blank to keep)" styleClass="field-label"/>
+                            <PasswordField fx:id="passwordField" promptText="••••••••" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <Label text="TRAVEL PREFERENCES" styleClass="field-label"/>
+                            <TextField fx:id="preferencesField" styleClass="text-field"/>
+                        </VBox>
+                    </GridPane>
+                    <Label fx:id="statusLabel" text="" wrapText="true"/>
+                    <Button text="Save Changes" onAction="#handleUpdateProfile" styleClass="btn-primary"/>
+                </VBox>
+                <VBox styleClass="danger-card" spacing="14">
+                    <Label text="Danger Zone" styleClass="danger-title"/>
+                    <Label text="Deleting your account is permanent and cannot be undone." styleClass="muted-label"/>
+                    <Button text="Delete My Account" onAction="#handleDeleteAccount" styleClass="btn-danger"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

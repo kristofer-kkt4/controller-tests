@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.ui.controllers.MyPlansController"
+            styleClass="root-pane">
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="0">
+            <Label text="✈  TripPlanner" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="nav-welcome"/>
+            <Button text="Search Trips" onAction="#goToDashboard" styleClass="btn-nav"/>
+            <Button text="Profile"      onAction="#goToProfile"   styleClass="btn-nav"/>
+            <Button text="Logout"       onAction="#handleLogout"  styleClass="btn-nav-outline"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="28" styleClass="dashboard-content">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <VBox spacing="4">
+                        <Label text="My Saved Plans" styleClass="section-title"/>
+                        <Label text="Your saved trip packages are listed below." styleClass="muted-label"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="planCountLabel" styleClass="result-count"/>
+                </HBox>
+                <VBox fx:id="plansContainer" spacing="16"/>
+                <Label fx:id="emptyLabel"
+                       text="No saved plans yet — search for a trip and save one!"
+                       styleClass="muted-label"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

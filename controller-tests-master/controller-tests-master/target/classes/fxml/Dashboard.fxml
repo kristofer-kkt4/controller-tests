@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.ui.controllers.DashboardController"
+            styleClass="root-pane">
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="0">
+            <Label text="✈  TripPlanner" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="nav-welcome"/>
+            <Button text="My Plans" onAction="#goToMyPlans"  styleClass="btn-nav"/>
+            <Button text="Profile"  onAction="#goToProfile"  styleClass="btn-nav"/>
+            <Button text="Logout"   onAction="#handleLogout" styleClass="btn-nav-outline"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="28" styleClass="dashboard-content">
+
+                <VBox styleClass="search-card" spacing="18">
+                    <VBox spacing="4">
+                        <Label text="Search Trip Packages" styleClass="section-title"/>
+                        <Label text="Find the best combination of flights, hotels and day tours." styleClass="muted-label"/>
+                    </VBox>
+
+                    <!-- Row 1: Flight fields -->
+                    <GridPane hgap="16" vgap="14">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <VBox spacing="6" GridPane.columnIndex="0">
+                            <Label text="DEPARTURE CODE" styleClass="field-label"/>
+                            <TextField fx:id="departureField" promptText="e.g. KEF" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="1">
+                            <Label text="ARRIVAL CODE" styleClass="field-label"/>
+                            <TextField fx:id="arrivalField" promptText="e.g. LHR" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="2">
+                            <Label text="START DATE" styleClass="field-label"/>
+                            <DatePicker fx:id="startDatePicker" maxWidth="Infinity"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="3">
+                            <Label text="END DATE" styleClass="field-label"/>
+                            <DatePicker fx:id="endDatePicker" maxWidth="Infinity"/>
+                        </VBox>
+                    </GridPane>
+
+                    <!-- Row 2: Hotel + Tour fields -->
+                    <GridPane hgap="16" vgap="14">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <VBox spacing="6" GridPane.columnIndex="0">
+                            <Label text="COUNTRY" styleClass="field-label"/>
+                            <TextField fx:id="countryField" promptText="e.g. Iceland" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="1">
+                            <Label text="CITY" styleClass="field-label"/>
+                            <TextField fx:id="cityField" promptText="e.g. Reykjavik" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="2">
+                            <Label text="TOUR NAME" styleClass="field-label"/>
+                            <TextField fx:id="tourNameField" promptText="e.g. Museum Tour" styleClass="text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="3">
+                            <Label text="GROUP SIZE" styleClass="field-label"/>
+                            <TextField fx:id="groupSizeField" promptText="e.g. 2" styleClass="text-field"/>
+                        </VBox>
+                    </GridPane>
+
+                    <HBox spacing="14" alignment="CENTER_LEFT">
+                        <Button text="Search Packages" onAction="#handleSearch" styleClass="btn-primary"/>
+                        <Label fx:id="statusLabel" styleClass="muted-label"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="resultCountLabel" styleClass="result-count"/>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="14">
+                    <Label text="Available Trip Packages" styleClass="section-title"/>
+                    <VBox fx:id="resultsContainer" spacing="16"/>
+                    <Label fx:id="noResultsLabel"
+                           text="Fill in the form above and click Search."
+                           styleClass="muted-label"/>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
