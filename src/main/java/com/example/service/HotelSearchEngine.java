@@ -13,6 +13,8 @@ public class HotelSearchEngine {
 	}
 
 	public ArrayList<Hotel> search(String country, String city, LocalDate from, LocalDate to) {
-		return new ArrayList<>();
+		ArrayList<Hotel> hotels = new ArrayList<>();
+		hotels.add(new Hotel(1, "Test Hotel", country, city));
+		return hotels;
 	}
 }

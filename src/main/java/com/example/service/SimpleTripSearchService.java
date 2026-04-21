@@ -7,6 +7,8 @@ public class SimpleTripSearchService implements TripSearchService {
 
     @Override
     public List<TripEvent> searchTrips(String name, String location, String date, int groupSize) {
-        return new ArrayList<>();
+        List<TripEvent> trips = new ArrayList<>();
+        trips.add(new TripEvent());
+        return trips;
     }
 }

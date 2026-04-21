@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5487f6d-84e8-470c-abe1-3aa1411564cb" name="Changes" comment="TripPlannerController">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/examplIntegration Airline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/TripPlannerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AirlineIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/AirlineIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/FlightService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AirlineIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/FlightComponentFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/Flight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/Hotelsearchengine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/Hotelsearchengine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/MockFlightService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/Hotelsearchengine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/HotelSearchEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/Tripservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/Tripservice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/SimpleTripSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/SimpleTripSearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/TripEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/TripEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/Tripservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/TripSearchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/controller/TripPlannerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/controller/TripPlannerControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775403504803</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="TripPlannerController">
+      <option name="closed" value="true" />
+      <created>1776726223295</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776726223295</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

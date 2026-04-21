@@ -7,7 +7,8 @@ import java.util.List;
 public class FlightComponentFacade {
 
     public List<Flight> searchFlights(String departureCode, String arrivalCode, ZonedDateTime date) {
-        // temporary dummy data
-        return new ArrayList<>();
+        List<Flight> flights = new ArrayList<>();
+        flights.add(new Flight());
+        return flights;
     }
 }
